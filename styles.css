@@ -190,7 +190,7 @@ nav {
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
   align-items: center;
-  min-height: 80vh;
+  min-height: clamp(500px, 80svh, 900px);
 }
 
 .hero-label {
