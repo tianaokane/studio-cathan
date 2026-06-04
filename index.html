@@ -14,11 +14,14 @@
   <!-- ── NAV ── -->
   <nav>
     <a class="nav-logo" href="#">Studio Cathán<span class="nav-logo-dot"></span></a>
-    <ul class="nav-links">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#portfolio">Work</a></li>
-      <li><a href="#process">How we work</a></li>
-      <li><a href="#contact" class="nav-cta">Get in touch</a></li>
+    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu(this)">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#services" onclick="closeMenu()">Services</a></li>
+      <li><a href="#portfolio" onclick="closeMenu()">Work</a></li>
+      <li><a href="#process" onclick="closeMenu()">How we work</a></li>
+      <li><a href="#contact" class="nav-cta" onclick="closeMenu()">Get in touch</a></li>
     </ul>
   </nav>
 
@@ -62,7 +65,7 @@
   <div class="trusted-bar">
     <p>Trusted by businesses across Northern Ireland</p>
     <div class="trusted-names">
-      <span>The Oak Consultancy</span>
+      <span>Oak Consultancy</span>
       <span>Roe Valley Residents Association</span>
       <span>1st Class Blinds</span>
     </div>
@@ -147,7 +150,7 @@
           <div class="portfolio-thumb">🌿</div>
           <div class="portfolio-body">
             <p class="portfolio-type">Web design</p>
-            <p class="portfolio-name">The Oak Consultancy</p>
+            <p class="portfolio-name">Oak Consultancy</p>
             <p class="portfolio-desc">A professional brochure site for a Northern Ireland consultancy — clean layout, clear messaging, built to instil confidence.</p>
             <span class="portfolio-link">Visit site →</span>
           </div>
@@ -257,6 +260,21 @@
     </ul>
     <p class="footer-copy">© 2026 Studio Cathán</p>
   </footer>
+
+  <script>
+    function toggleMenu(btn) {
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', !isOpen);
+      btn.classList.toggle('open', !isOpen);
+      document.getElementById('nav-links').classList.toggle('open', !isOpen);
+    }
+    function closeMenu() {
+      const btn = document.querySelector('.nav-hamburger');
+      btn.setAttribute('aria-expanded', 'false');
+      btn.classList.remove('open');
+      document.getElementById('nav-links').classList.remove('open');
+    }
+  </script>
 
 </body>
 </html>
