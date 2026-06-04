@@ -136,7 +136,7 @@ nav {
 .nav-hamburger.open span:nth-child(2) { opacity: 0; }
 .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .nav-hamburger {
     display: flex;
   }
@@ -903,7 +903,6 @@ footer {
 
 @media (max-width: 640px) {
   nav { padding: 0 1.25rem; }
-  .nav-links { gap: 1rem; }
 
   .hero {
     grid-template-columns: 1fr;
